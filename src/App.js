@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './Header';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from './Home'
+import AboutUs from './Aboutus'
+import Profile from './Profile'
+import Settings from './Settings'
+import Lectures from './Lectures';
+import Notes from './Notes';
+import Games from './Games';
+import Registration from './Registration';
+import analytics from './firebase-config';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header>
+        <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/aboutUs">
+              <AboutUs />
+            </Route>
+            <Route exact path="/registration">
+              <Registration />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route exact path="/settings">
+              <Settings />
+            </Route>
+            <Route exact path="/lectures">
+              <Lectures />
+            </Route>
+            <Route exact path="/notes">
+              <Notes />
+            </Route>
+            <Route exact path="/games">
+              <Games />
+            </Route>
+        </Switch>
+      </Header>
+    </Router>
   );
 }
 
