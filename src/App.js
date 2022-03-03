@@ -6,9 +6,10 @@ import Profile from './Profile'
 import Settings from './Settings'
 import Lectures from './Lectures';
 import Notes from './Notes';
-import Games from './Games';
 import Registration from './Registration';
 import analytics from './firebase-config';
+import Rules from './Rules';
+
 
 function App() {
   
@@ -37,8 +38,8 @@ function App() {
             <Route exact path="/notes">
               <Notes />
             </Route>
-            <Route exact path="/games">
-              <Games />
+            <Route exact path="/rules">
+              <Rules />
             </Route>
         </Switch>
       </Header>

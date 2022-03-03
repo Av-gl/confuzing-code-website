@@ -11,6 +11,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import NotesIcon from '@mui/icons-material/Notes';
 import GamesIcon from '@mui/icons-material/Games';
 import BookIcon from '@mui/icons-material/Book';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 const name2 = 'A';
 
@@ -20,16 +21,16 @@ const headersData = [
         href: "/aboutUs",
     },
     {
-        label: "Lectures",
-        href: "/lectures",
-    },
-    {
-        label: "Notes",
+        label: "Resources",
         href: "/notes",
     },
     {
-        label: "Games",
-        href: "/games",
+        label: "Login/Register",
+        href: "/registration",
+    },
+    {
+        label: "Rules",
+        href: "/rules",
     },
 ];
 
@@ -50,14 +51,14 @@ const headersDataMob = [
         symbol: <BookIcon />
     },
     {
-        label: "Notes",
+        label: "Games+PastPapers",
         href: "/notes",
         symbol: <NotesIcon />
     },
     {
-        label: "Games",
-        href: "/games",
-        symbol: <GamesIcon />
+        label: "Rules+Syllabus",
+        href: "/rules+syllabus",
+        symbol: <MenuBookIcon />
     },
 ];
 
@@ -85,7 +86,7 @@ const useStyles = makeStyles(()=> ({
         padding: "20px 30px",
     }, 
     page: {
-        marginTop:'80px',
+        marginTop:'90px',
     },
     toolbarName: {
         marginRight:"auto",

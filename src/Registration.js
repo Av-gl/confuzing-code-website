@@ -120,7 +120,7 @@ export default function Registration() {
                 </Grid>
                 <Grid container sm={6} xs={12} sx={{borderLeft:"2px solid black",marginBottom:"10px"}} > 
                     <Box sx={{marginRight:"10px",marginLeft:"10px",width:"100%"}} bgcolor={color}>
-                        <Grid container direction="column" alignItems="center" justifyContent="center" sx={{width:"100%",minHeight:"620px"}}>
+                        <Grid container direction="column" alignItems="center" justifyContent="center" sx={{width:"100%",minHeight:"610px"}}>
                             <Typography>Thank You For Being Here With Us Today!</Typography> 
                             <br></br>
                             <Typography>We hope you have an amazing experience!</Typography> 
