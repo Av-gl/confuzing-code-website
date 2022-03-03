@@ -2,11 +2,9 @@ import Header from './Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import AboutUs from './Aboutus'
-import Profile from './Profile'
 import Settings from './Settings'
-import Lectures from './Lectures';
-import Notes from './Notes';
-import Registration from './Registration';
+import Resources from './Resources';
+import LoginRegister from './LoginRegister';
 import analytics from './firebase-config';
 import Rules from './Rules';
 
@@ -23,20 +21,14 @@ function App() {
             <Route exact path="/aboutUs">
               <AboutUs />
             </Route>
-            <Route exact path="/registration">
-              <Registration />
-            </Route>
-            <Route exact path="/profile">
-              <Profile />
+            <Route exact path="/login-register">
+              <LoginRegister />
             </Route>
             <Route exact path="/settings">
               <Settings />
             </Route>
-            <Route exact path="/lectures">
-              <Lectures />
-            </Route>
-            <Route exact path="/notes">
-              <Notes />
+            <Route exact path="/resources">
+              <Resources />
             </Route>
             <Route exact path="/rules">
               <Rules />

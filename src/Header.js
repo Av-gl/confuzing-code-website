@@ -22,11 +22,11 @@ const headersData = [
     },
     {
         label: "Resources",
-        href: "/notes",
+        href: "/resources",
     },
     {
         label: "Login/Register",
-        href: "/registration",
+        href: "/login-register",
     },
     {
         label: "Rules",
@@ -46,17 +46,17 @@ const headersDataMob = [
         symbol: <InfoIcon />
     },
     {
-        label: "Lectures",
-        href: "/lectures",
-        symbol: <BookIcon />
+        label: "Login/Register",
+        href: "/login-register",
+        symbol: <PersonIcon />
     },
     {
-        label: "Games+PastPapers",
+        label: "Resources",
         href: "/notes",
         symbol: <NotesIcon />
     },
     {
-        label: "Rules+Syllabus",
+        label: "Rules",
         href: "/rules+syllabus",
         symbol: <MenuBookIcon />
     },
@@ -179,15 +179,6 @@ export default function Header( {children} ) {
                     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                 >
-                    <MenuItem>
-                        <Link to="/registration" style={{textDecoration:"none"}}>
-                            <ListItemIcon>
-                                <PersonAdd fontSize="small" />
-                            </ListItemIcon>
-                            Registration/Sign In
-                        </Link>
-                    </MenuItem>
-
                     <MenuItem>
                         <Link to="#" style={{textDecoration:"none"}}>
                             <ListItemIcon>
