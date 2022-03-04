@@ -8,6 +8,9 @@ export default function Aboutus() {
                each of us do and what inspired us for constructing this competition from scratch. 
                The page will be updated with relevant information by the end of the month. Thank you!
            </Typography>
+           <Typography variant="h3" sx={{margin:"30px"}}>
+               For any enquiries, please contact us on the following email: confuzingcode@gmail.com
+            </Typography>
        </Grid> 
     )
 }

@@ -12,8 +12,8 @@ import NotesIcon from '@mui/icons-material/Notes';
 import GamesIcon from '@mui/icons-material/Games';
 import BookIcon from '@mui/icons-material/Book';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-
-const name2 = 'A';
+import { signOut } from "firebase/auth";
+import {auth} from './firebase-config'
 
 const headersData = [
     {
@@ -52,12 +52,12 @@ const headersDataMob = [
     },
     {
         label: "Resources",
-        href: "/notes",
+        href: "/resources",
         symbol: <NotesIcon />
     },
     {
         label: "Rules",
-        href: "/rules+syllabus",
+        href: "/rules",
         symbol: <MenuBookIcon />
     },
 ];
@@ -86,7 +86,7 @@ const useStyles = makeStyles(()=> ({
         padding: "20px 30px",
     }, 
     page: {
-        marginTop:'90px',
+        marginTop:'80px',
     },
     toolbarName: {
         marginRight:"auto",
@@ -155,6 +155,24 @@ export default function Header( {children} ) {
         )
     }
 
+    const handleLogout=()=>{
+        signOut(auth)
+        .then(() => {
+            alert("You have been logged out!")
+        })
+        .catch((err) => {
+            alert("err.message")
+        })
+
+    }
+
+    const avatarDisplay=()=>{
+        return (
+
+            <Avatar></Avatar>
+        )
+    }
+
     const account=()=>{
         return (
             <div>
@@ -167,7 +185,7 @@ export default function Header( {children} ) {
                         aria-expanded={open ? 'true' : undefined}
                         color="inherit"
                         >
-                        <Avatar>{name2}</Avatar>
+                        <div>{avatarDisplay()}</div>  
                     </IconButton>
                 </Tooltip>
                 <Menu
@@ -179,7 +197,7 @@ export default function Header( {children} ) {
                     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                 >
-                    <MenuItem>
+                    <MenuItem onClick={handleLogout}>
                         <Link to="#" style={{textDecoration:"none"}}>
                             <ListItemIcon>
                                 <Logout fontSize="small" />
