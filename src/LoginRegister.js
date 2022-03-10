@@ -28,7 +28,7 @@ export default function Registration() {
     const { mobileView } = state;
 
     const createUser = async () => {
-        await addDoc(usersCollectionRef, { firstName: fName, country: country, grade: Number(grade),email:email,lastName:lName,password:password,school:school,username:username });
+        await addDoc(usersCollectionRef, { country: country, grade: Number(grade),email:email,password:password});
       };
 
     useEffect(() => {
@@ -87,16 +87,8 @@ export default function Registration() {
                     </Grid>
                     <Box component="form" sx={{marginTop:"15px"}} autoComplete='off' onSubmit={handleSubmit}>
                         <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
-                            <Grid item sm={6} xs={12}> 
-                                <TextField required label="First Name" variant='outlined' color='primary' onChange={(e) => setFName(e.target.value)}/>
-                            </Grid>
-                            <Grid item sm={6} xs={12}>
-                                <TextField required label="Last Name" variant='outlined' color='primary' onChange={(e) => setLName(e.target.value)}/>
-                            </Grid>
-                        </Grid>
-                        <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
                                 <Grid item sm={6} xs={12}>
-                                    <TextField required label="Username" variant='outlined' color='primary'onChange={(e) => setUsername(e.target.value)}/>
+                                    <TextField required label="Email" varient="outlined" color="primary" type="email" onChange={(e) => setEmail(e.target.value)}/>
                                 </Grid>
                                 <Grid item sm={6} xs={12}>
                                     <TextField required label="Password" variant='outlined' color='primary' type="password" onChange={(e) => setPassword(e.target.value)}/>
@@ -104,18 +96,10 @@ export default function Registration() {
                             </Grid>
                         <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
                             <Grid item sm={6} xs={12}>
-                                <TextField required label="Email" varient="outlined" color="primary" type="email" onChange={(e) => setEmail(e.target.value)}/>
+                                <TextField required label="Grade" variant='outlined' color='primary' type="number" onChange={(e) => setGrade(e.target.value)} error={gradeError}/>
                             </Grid>
                             <Grid item sm={6} xs={12}>
                                 <TextField label="Country" varient="outlined" color="primary" onChange={(e) => setCountry(e.target.value)}/>
-                            </Grid>
-                        </Grid>
-                        <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
-                            <Grid item sm={6} xs={12}>
-                                <TextField required label="School" variant='outlined' color='primary' onChange={(e) => setSchool(e.target.value)}/>
-                            </Grid>
-                            <Grid item sm={6} xs={12}>
-                                <TextField required label="Grade" variant='outlined' color='primary' type="number" onChange={(e) => setGrade(e.target.value)} error={gradeError}/>
                             </Grid>
                         </Grid>
                         <Grid container direction="column" alignItems="center" justifyContent="center">
@@ -161,17 +145,9 @@ export default function Registration() {
                     <Typography align="center" variant="h6">If you're new here, please register below!</Typography>
                     </Grid>
                     <Box component="form" sx={{marginTop:"30px",textAlign:"center"}} onSubmit={handleSubmit} >
-                        <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
-                            <Grid item sm={6} xs={12}> 
-                                <TextField required label="First Name" variant='outlined' color='primary' onChange={(e) => setFName(e.target.value)} sx={{marginBottom:"10px"}}/>
-                            </Grid>
-                            <Grid item sm={6} xs={12}>
-                                <TextField required label="Last Name" variant='outlined' color='primary' onChange={(e) => setLName(e.target.value)}/>
-                            </Grid>
-                        </Grid>
-                        <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
+                        <Grid container sx={{marginBottom:"10px"}} columnSpacing={2}>
                                 <Grid item sm={6} xs={12}>
-                                    <TextField required label="Username" variant='outlined' color='primary' onChange={(e) => setUsername(e.target.value)} sx={{marginBottom:"10px"}}/>
+                                    <TextField required label="Email" varient="outlined" color="primary" type="email" onChange={(e) => setEmail(e.target.value)} sx={{marginBottom:"10px"}}/>
                                 </Grid>
                                 <Grid item sm={6} xs={12}>
                                     <TextField required label="Password" variant='outlined' color='primary' type="password" onChange={(e) => setPassword(e.target.value)}/>
@@ -179,18 +155,10 @@ export default function Registration() {
                             </Grid>
                         <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
                             <Grid item sm={6} xs={12}>
-                                <TextField required label="Email" varient="outlined" color="primary" type="email" onChange={(e) => setEmail(e.target.value)} sx={{marginBottom:"10px"}}/>
+                                <TextField required label="Grade" variant='outlined' color='primary' type="number" onChange={(e) => setGrade(e.target.value)} error={gradeError} sx={{marginBottom:"10px"}}/>
                             </Grid>
                             <Grid item sm={6} xs={12}>
                                 <TextField label="Country" varient="outlined" color="primary" onChange={(e) => setCountry(e.target.value)}/>
-                            </Grid>
-                        </Grid>
-                        <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
-                            <Grid item sm={6} xs={12}>
-                                <TextField required label="School" variant='outlined' color='primary' onChange={(e) => setSchool(e.target.value)} sx={{marginBottom:"10px"}}/>
-                            </Grid>
-                            <Grid item sm={6} xs={12}>
-                                <TextField required label="Grade" variant='outlined' color='primary' type="number" onChange={(e) => setGrade(e.target.value)} error={gradeError}/>
                             </Grid>
                         </Grid>
                         <Grid container direction="column" alignItems="center" justifyContent="center">

@@ -4,6 +4,7 @@ import { useState,useEffect } from "react";
 import { red} from '@mui/material/colors';
 const color5 = red[50]
 
+
 export default function Home() {
     const [state, setState] = useState({mobileView: false})
     const { mobileView} = state;
@@ -46,7 +47,7 @@ export default function Home() {
                             </Box>
                             <Grid container justify="center" style={{marginTop:"auto"}}>
                         <Link to="/rules" style={{textDecoration:"none"}}>
-                            <Button variant="contained" color="primary" style={{marginBottom:"5px"}}>Rules and Regulations</Button>
+                            <Button variant="contained" color="primary" style={{marginBottom:"5px"}}>Find out more!</Button>
                         </Link>
                         </Grid>
                         </Grid>
@@ -107,7 +108,7 @@ export default function Home() {
                     <Typography style={{ padding:"10px"}}>To award you for your incredible performances in the competition, the team will be presenting the 1st, 2nd and 3rd ranks with a cash award of SGD 30, SGD 20, and SGD 10 respectively. Top 20 contestants will also receive a certificate of distinction and all participants will receive a certificate of participation. The top candidate from each country will also be receiving a certicate of appreciation.</Typography>
                     <Grid container justify="center">
                     <Link to="/rules" style={{textDecoration:"none"}}>
-                        <Button variant="contained" color="primary" style={{marginBottom:"10px"}}>Rules and Regulations</Button>
+                        <Button variant="contained" color="primary" style={{marginBottom:"10px"}}>Find out more!</Button>
                     </Link>
                     </Grid>
                 </Box>  

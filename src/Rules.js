@@ -25,9 +25,9 @@ export default function Notes() {
                     <Divider />
                     <Typography style={{padding:"10px"}}>Date: 16th July 2022.</Typography>
                     <Divider />
-                    <Typography style={{padding:"10px"}}>Contest: 2 tasks in 3 hours (10:00 am to 1:00 pm)</Typography>
+                    <Typography style={{padding:"10px"}}>Contest: 2 tasks in 2 hours (10:00 am to 12:00 am)</Typography>
                     <Divider />
-                    <Typography style={{padding:"10px"}}>Languages supported: Javascript, Java, Python 3, C++, C.</Typography>
+                    <Typography style={{padding:"10px"}}>All languages are supported</Typography>
                     <Divider />
                     <Typography style={{padding:"10px"}}>Contest URL: It will be emailed to contestants.</Typography>
                 </Box>  
@@ -43,7 +43,7 @@ export default function Notes() {
                 <Box sx={{width:"90%"}} borderRadius="2%">
                     <Typography variant="h5" style={{padding:"10px"}}>Tasks:</Typography>
                     <Divider />
-                    <Typography style={{padding:"10px"}}>All of the tasks in the Final Contest are designed to test the contestants' logical thinking skills. These tasks are of algorithmic nature and the focus is on finding unique and efficient solutions. Contestants are expected to design a source code to solve the given task whilst fulfilling the time requirements. The ConfuZing Code takes inspiration from many national and international coding competitions such as Google’s Kick Start and International Olympiad in Informatics (IOI). The source code provided by the contestants must be contained within one file and multiple files cannot be submitted.</Typography>
+                    <Typography style={{padding:"10px"}}>Each task in the competition is designed to test your logical thinking skills and the focus is on finding unique and efficient questions. Contestants are expected to design a source code to solve the given task whilst fulfilling the time requirements. You are required to design a source code while fulfilling the time requirements. There are no memory requirements and the tasks must be solved individually and not in teams. The source code must be contained within one source file.</Typography>
                     <Divider />
                     <Typography style={{padding:"10px"}}>Each task will be divided into multiple sub tasks, each of which will have certain marks. Each task will be of 100 marks. Time limits specified in the task will be very generous and three times the time required for the most efficient question. All questions can be solved by all languages and the programs are expected to read and write from standard input and output in the format specified in the task descriptions. At least two sample input and output templates will be provided in the task. The output should be formatted exactly as shown in the task.</Typography>
                     <Divider />
@@ -61,9 +61,7 @@ export default function Notes() {
                         <Divider />
                         <li> <Typography style={{padding:"10px"}}>Writing tools and plain paper.</Typography> </li>
                         <Divider />
-                        <li> <Typography style={{padding:"10px"}}>Written or printed materials and books.</Typography></li>
-                        <Divider />
-                        <li> <Typography style={{padding:"10px"}}>English dictionaries</Typography></li>
+                        <li> <Typography style={{padding:"10px"}}>Written or printed material.</Typography></li>
                         <Divider />
                         <li> <Typography style={{padding:"10px"}}>Medical supplies</Typography></li>
                     </ul>

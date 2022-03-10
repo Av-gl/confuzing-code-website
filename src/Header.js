@@ -260,6 +260,7 @@ export default function Header( {children} ) {
                 <div className={toolbarName}>{name()}</div>
                 <div>{account()}</div>
             </Toolbar>
+            
         );
       };
 

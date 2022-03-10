@@ -5,12 +5,9 @@ import AboutUs from './Aboutus'
 import Settings from './Settings'
 import Resources from './Resources';
 import LoginRegister from './LoginRegister';
-import analytics from './firebase-config';
 import Rules from './Rules';
 
-
 function App() {
-  
   return (
     <Router>
       <Header>
