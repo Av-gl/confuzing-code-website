@@ -6,6 +6,8 @@ import Settings from './Settings'
 import Resources from './Resources';
 import LoginRegister from './LoginRegister';
 import Rules from './Rules';
+import Syllabus from './Syllabus'
+import Notes from './Notes'
 
 function App() {
   return (
@@ -29,6 +31,12 @@ function App() {
             </Route>
             <Route exact path="/rules">
               <Rules />
+            </Route>
+            <Route exact path="/resources/syllabus">
+              <Syllabus />
+            </Route>
+            <Route exact path="/resources/notes">
+              <Notes />
             </Route>
         </Switch>
       </Header>
