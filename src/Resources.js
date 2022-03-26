@@ -40,7 +40,7 @@ export default function Resources() {
     let history = useHistory();
 
     return (
-        <Box sx={{height:"calc(100vh - 90px)",margin:"5px",width:"99.5%"}}>
+        <Box sx={{height:"calc(100vh - 100px)",margin:"5px",width:"99.5%"}}>
                 <Box sx={{height:"50%",marginRight:"5px"}}>
                     <Grid container style={{height:"100%"}}>
                         <Grid container xs={12} sm={6} display="flex" justify="center" align="center" style={{padding:"10px"}}>

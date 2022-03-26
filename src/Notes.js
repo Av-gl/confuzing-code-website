@@ -54,22 +54,22 @@ export default function Aboutus() {
                             </Grid>
                     </Grid>
                     <Grid item sm={7} xs={12}>
-                            <Grid container style={{height:"30vh",padding:"2px",border:"10px solid white"}}>
+                            <Grid container style={{height:"29vh",padding:"2px",border:"10px solid white"}}>
                                 <Button onClick={()=>{history.push("/resources/notes/data-structures")}} className={classes.buttonStep} variant="text"><Typography variant="h2" style={{color:"white"}}>Data Structures</Typography></Button>
                             </Grid>
                     </Grid>
                     <Grid item sm={5} xs={12}>
-                            <Grid container style={{height:"30vh",padding:"2px",border:"10px solid white"}}>
+                            <Grid container style={{height:"29vh",padding:"2px",border:"10px solid white"}}>
                                 <Button onClick={()=>{history.push("/resources/notes/graphs")}} className={classes.buttonStep} variant="text"><Typography variant="h2" style={{color:"white"}}>Graphs</Typography></Button>
                             </Grid>
                     </Grid>
                     <Grid item sm={4} xs={12}>
-                            <Grid container style={{height:"30vh",padding:"2px",border:"10px solid white"}}>
+                            <Grid container style={{height:"29vh",padding:"2px",border:"10px solid white"}}>
                                 <Button onClick={()=>{history.push("/resources/notes/trees")}} className={classes.buttonStep} variant="text"><Typography variant="h2" style={{color:"white"}}>Trees</Typography></Button>
                             </Grid>
                     </Grid>
                     <Grid item sm={8} xs={12}>
-                            <Grid container style={{height:"30vh",padding:"2px",border:"10px solid white"}}>
+                            <Grid container style={{height:"29vh",padding:"2px",border:"10px solid white"}}>
                                 <Button onClick={()=>{history.push("/resources/notes/everything-else")}} className={classes.buttonStep} variant="text"><Typography variant="h2" style={{color:"white"}}>Everything Else</Typography></Button>
                             </Grid>
                     </Grid>

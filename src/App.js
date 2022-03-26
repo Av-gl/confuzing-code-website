@@ -8,6 +8,7 @@ import LoginRegister from './LoginRegister';
 import Rules from './Rules';
 import Syllabus from './Syllabus'
 import Notes from './Notes'
+import Loops from './Loops';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route exact path="/resources/notes">
               <Notes />
+            </Route>
+            <Route exact path="/resources/notes/loops">
+              <Loops />
             </Route>
         </Switch>
       </Header>

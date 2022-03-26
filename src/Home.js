@@ -1,5 +1,5 @@
 import {Grid, Box,Typography,Button} from "@material-ui/core";
-import { Link} from "react-router-dom";
+import Lottie from "react-lottie"
 import { useState,useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { red} from '@mui/material/colors';
@@ -54,6 +54,24 @@ const useStyles = makeStyles({
 
 export default function Home() {
     const classes = useStyles();
+    const question = {
+        loop:true,
+        autoplay:true,
+        animationData:require('./animations/question.json'),
+        renderer:'svg',
+    }
+    const rules = {
+        loop:true,
+        autoplay:true,
+        animationData:require('./animations/rules.json'),
+        renderer:'svg',
+    }
+    const rankings = {
+        loop:true,
+        autoplay:true,
+        animationData:require('./animations/rankings.json'),
+        renderer:'svg',
+    }
 
     const [state, setState] = useState({mobileView: false})
     const { mobileView} = state;
@@ -89,7 +107,8 @@ export default function Home() {
                     <Typography variant="h2" align="center" >More About Us!</Typography>
                     <Grid container style={{padding:"10px"}} spacing={2}>
                         <Grid item xs={4}>
-                            <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex" className={classes.prizes}>
+                            <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex">
+                            <Lottie options={rankings}></Lottie>
                             </Grid>
                             <Grid contained style={{height:"auto"}} display="flex">
                                 <Grid item>
@@ -98,7 +117,8 @@ export default function Home() {
                             </Grid>
                         </Grid>
                         <Grid item xs={4}>
-                        <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex" className={classes.question}>
+                        <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex">
+                        <Lottie options={question}></Lottie>
                             </Grid>
                             <Grid contained style={{height:"auto"}} display="flex">
                                 <Grid item>
@@ -107,7 +127,8 @@ export default function Home() {
                             </Grid>
                         </Grid>
                         <Grid item xs={4}>
-                        <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex" className={classes.rules}>
+                        <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex">
+                        <Lottie options={rules}></Lottie>
                             </Grid>
                             <Grid contained style={{height:"auto"}} display="flex">
                                 <Grid item>
@@ -139,7 +160,8 @@ export default function Home() {
                     <Typography variant="h2" align="center" >More About Us!</Typography>
                     <Grid container style={{padding:"10px"}} spacing={2}>
                         <Grid item xs={12}>
-                            <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex" className={classes.prizes}>
+                            <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex">
+                            <Lottie options={rankings}></Lottie>
                             </Grid>
                             <Grid contained style={{height:"auto"}} display="flex">
                                 <Grid item>
@@ -148,7 +170,8 @@ export default function Home() {
                             </Grid>
                         </Grid>
                         <Grid item xs={12}>
-                        <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex" className={classes.question}>
+                        <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex">
+                        <Lottie options={question}></Lottie>
                             </Grid>
                             <Grid contained style={{height:"auto"}} display="flex">
                                 <Grid item>
@@ -157,7 +180,8 @@ export default function Home() {
                             </Grid>
                         </Grid>
                         <Grid item xs={12}>
-                        <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex" className={classes.rules}>
+                        <Grid contained style={{height:"200px",marginBottom:"20px"}} display="flex">
+                        <Lottie options={rules}></Lottie>
                             </Grid>
                             <Grid contained style={{height:"auto"}} display="flex">
                                 <Grid item>

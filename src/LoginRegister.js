@@ -7,10 +7,17 @@ import { db, auth} from "./firebase-config";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
 import {collection,addDoc, query, where, getDocs} from "firebase/firestore"
 import {blue} from '@mui/material/colors';
+import Lottie from "react-lottie"
 const color = blue[300]
 
-
 export default function Registration() {
+    let heightAnimation = 450;
+    const interaction = {
+        loop:true,
+        autoplay:true,
+        animationData:require('./animations/interaction.json'),
+        renderer:'svg',
+    }
 
     const [state, setState] = useState({mobileView: false})
     const [fName,setFName] = useState('')
@@ -33,7 +40,7 @@ export default function Registration() {
 
     useEffect(() => {
         const setResponsiveness = () => {
-          return window.innerWidth < 1000
+          return window.innerWidth < 750
             ? setState((prevState) => ({ ...prevState, mobileView: true }))
             : setState((prevState) => ({ ...prevState, mobileView: false }));
         };
@@ -80,21 +87,21 @@ export default function Registration() {
     
     const displayDesktop=()=>{
         return (
-            <Grid container>
-                <Grid container md={6} xs={12} direction="column" alignItems="center" justifyContent="center">
-                    <Grid container direction="column" alignItems="center" justifyContent="center" sx={{marginTop:"10px"}}>
-                        <Typography align="center" variant="h6">If you're new here, please register below!</Typography>
-                    </Grid>
-                    <Box component="form" sx={{marginTop:"15px"}} autoComplete='off' onSubmit={handleSubmit}>
-                        <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
+            <Box sx={{height:"calc(100vh - 90px)",paddingLeft:"25px",paddingRight:"10px"}}>
+                <Grid container style={{height:"100%",backgroundColor:"#e3f2fd",borderRadius:"30px"}} spacing={2}>
+                    <Grid container xs={6} display="flex" justifyContent="center" alignItems="center"> 
+                        <Grid item style={{border:"5px solid black",padding:"10px",borderRadius:"30px"}}>
+                            <Box component="form" sx={{margin:"30px"}} autoComplete='off' onSubmit={handleSubmit}>
+                            <Typography align="center" variant="h6">If you're new here, please register below!</Typography>
+                        <Grid container sx={{marginBottom:"20px",marginTop:"20px"}} columnSpacing={1}>
                                 <Grid item sm={6} xs={12}>
-                                    <TextField required label="Email" varient="outlined" color="primary" type="email" onChange={(e) => setEmail(e.target.value)}/>
+                                    <TextField required label="Email" variant="outlined" color="primary" type="email" onChange={(e) => setEmail(e.target.value)}/>
                                 </Grid>
                                 <Grid item sm={6} xs={12}>
                                     <TextField required label="Password" variant='outlined' color='primary' type="password" onChange={(e) => setPassword(e.target.value)}/>
                                 </Grid>
                             </Grid>
-                        <Grid container sx={{marginBottom:"20px"}} columnSpacing={2}>
+                        <Grid container sx={{marginBottom:"20px"}} columnSpacing={1}>
                             <Grid item sm={6} xs={12}>
                                 <TextField required label="Grade" variant='outlined' color='primary' type="number" onChange={(e) => setGrade(e.target.value)} error={gradeError}/>
                             </Grid>
@@ -109,8 +116,8 @@ export default function Registration() {
                     <Grid container direction="column" alignItems="center" justifyContent="center" sx={{marginTop:"20px"}}>
                         <Typography align="center" variant="h6"> Great to have you back, please login below! </Typography>
                     </Grid>
-                    <Box component="form" sx={{marginTop:"20px"}} onSubmit={handleLogin} >
-                        <Grid container sx={{marginBottom:"15px"}} columnSpacing={2}>
+                    <Box component="form" sx={{margin:"20px"}} onSubmit={handleLogin} >
+                        <Grid container sx={{marginBottom:"15px"}} columnSpacing={1}>
                             <Grid item sm={6} xs={12}> 
                                 <TextField required label="Email" variant='outlined' color='primary' onChange={(e) => setEmail(e.target.value)}/>
                             </Grid>
@@ -118,22 +125,19 @@ export default function Registration() {
                                 <TextField required label="Password" variant='outlined' color='primary' onChange={(e) => setPassword(e.target.value)}/>
                             </Grid>
                         </Grid>
-                        {/*<Box textAlign='center'>
-                            <Button>Forgot Password!</Button>
-                        </Box>*/}
                         <Box textAlign='center' sx={{marginTop:"5px",marginBottom:0}}>
                             <Button type="submit" variant="contained">Login!</Button>
                         </Box>
                     </Box>
-                </Grid>
-                <Grid container sm={6} xs={12} sx={{borderLeft:"2px solid black",marginBottom:"10px"}} > 
-                    <Box sx={{marginRight:"10px",marginLeft:"10px",width:"100%"}} bgcolor={color}>
-                        <Grid container direction="column" alignItems="center" justifyContent="center" sx={{width:"100%",minHeight:"610px"}}>
-                            <Typography variant="h1" sx={{paddingLeft:"15px",color:"white"}}>Thank You For Being Here With Us Today!</Typography> 
                         </Grid>
-                    </Box>
+                    </Grid>
+                    <Grid container xs={6} display="flex" justifyContent="center" alignItems="center" style={{backgroundColor:"#e3f2fd",borderRadius:"30px"}}>
+                    <Grid item style={{borderRadius:"30px",height:"calc(100vh - 220px)"}}>
+                    <Lottie options={interaction}></Lottie>
+                    </Grid>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </Box>
         )
     }
 
