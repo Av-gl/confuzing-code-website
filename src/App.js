@@ -9,6 +9,8 @@ import Rules from './Rules';
 import Syllabus from './Syllabus'
 import Notes from './Notes'
 import Loops from './Loops';
+import PastPapers from './Pastpapers';
+import Lectures from './Lectures';
 
 function App() {
   return (
@@ -41,6 +43,12 @@ function App() {
             </Route>
             <Route exact path="/resources/notes/loops">
               <Loops />
+            </Route>
+            <Route exact path="/resources/past-papers">
+              <PastPapers />
+            </Route>
+            <Route exact path="/resources/lectures">
+              <Lectures />
             </Route>
         </Switch>
       </Header>

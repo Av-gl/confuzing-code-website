@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import syllabus from "./img/Syllabus.jpg"
 import notes from "./img/Notes.jpg"
-import games from "./img/Games.jpg"
+import pastPapers from "./img/pastPapers.webp"
 import lectures from "./img/Lectures.jpg"
 
 const useStyles = makeStyles({
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         backgroundImage: `url(${syllabus})`,
         backgroundSize:"cover",
         backgroundRepeat:"no-repeat",
-        backgroundPosition:"center center"
+        backgroundPosition:"center center",
     },
     notes: {
         backgroundImage: `url(${notes})`,
@@ -20,8 +20,8 @@ const useStyles = makeStyles({
         backgroundRepeat:"no-repeat",
         backgroundPosition:"center center"
     },
-    games: {
-        backgroundImage: `url(${games})`,
+    pastPapers: {
+        backgroundImage: `url(${pastPapers})`,
         backgroundSize:"cover",
         backgroundRepeat:"no-repeat",
         backgroundPosition:"center center"
@@ -44,20 +44,20 @@ export default function Resources() {
                 <Box sx={{height:"50%",marginRight:"5px"}}>
                     <Grid container style={{height:"100%"}}>
                         <Grid container xs={12} sm={6} display="flex" justify="center" align="center" style={{padding:"10px"}}>
-                            <Button onClick={()=>{history.push("/resources/syllabus")}} className={classes.syllabus} style={{width:"100%",color:"white",backgroundColor:"#1a237e",borderRadius:"10px"}} variant="text"><Typography variant="h2"></Typography></Button>
+                            <Button onClick={()=>{history.push("/resources/syllabus")}} className={classes.syllabus} style={{width:"100%",color:"white",borderRadius:"10px"}} variant="text"></Button>
                         </Grid>
                         <Grid container xs={12} sm={6} display="flex" justify="center" align="center" style={{padding:"10px"}}>
-                            <Button onClick={()=>{history.push("/resources/notes")}} className={classes.notes} style={{width:"100%",color:"white",backgroundColor:"#1a237e",borderRadius:"10px"}} variant="text"><Typography variant="h2"></Typography></Button>
+                            <Button onClick={()=>{history.push("/resources/notes")}} className={classes.notes} style={{width:"100%",color:"white",borderRadius:"10px"}} variant="text"><Typography variant="h2"></Typography></Button>
                         </Grid>
                     </Grid>
                 </Box>
                 <Box sx={{height:"50%",marginRight:"5px"}}>
                     <Grid container style={{height:"100%"}}>
                         <Grid container xs={12} sm={6} display="flex" justify="center" align="center" style={{padding:"10px"}}>
-                            <Button onClick={()=>{history.push("/resources/games")}} style={{width:"100%",color:"white",backgroundColor:"#1a237e",borderRadius:"10px"}} className={classes.games} variant="text"><Typography variant="h2"></Typography></Button>
+                            <Button onClick={()=>{history.push("/resources/past-papers")}} style={{width:"100%",color:"white",borderRadius:"10px"}} className={classes.pastPapers} variant="text"><Typography variant="h2"></Typography></Button>
                         </Grid>
                         <Grid container xs={12} sm={6} display="flex" justify="center" align="center" style={{padding:"10px"}}>
-                            <Button onClick={()=>{history.push("/resources/lectures")}} style={{width:"100%",color:"white",backgroundColor:"#1a237e",borderRadius:"10px"}} className={classes.lectures} variant="text"><Typography variant="h2"></Typography></Button>
+                            <Button onClick={()=>{history.push("/resources/lectures")}} style={{width:"100%",color:"white",borderRadius:"10px"}} className={classes.lectures} variant="text"><Typography variant="h2"></Typography></Button>
                         </Grid>
                     </Grid>
                 </Box>

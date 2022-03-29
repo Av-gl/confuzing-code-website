@@ -89,7 +89,7 @@ export default function Registration() {
         return (
             <Box sx={{height:"calc(100vh - 90px)",paddingLeft:"25px",paddingRight:"10px"}}>
                 <Grid container style={{height:"100%",backgroundColor:"#e3f2fd",borderRadius:"30px"}} spacing={2}>
-                    <Grid container xs={6} display="flex" justifyContent="center" alignItems="center"> 
+                    <Grid container xs={7} display="flex" justifyContent="center" alignItems="center"> 
                         <Grid item style={{border:"5px solid black",padding:"10px",borderRadius:"30px"}}>
                             <Box component="form" sx={{margin:"30px"}} autoComplete='off' onSubmit={handleSubmit}>
                             <Typography align="center" variant="h6">If you're new here, please register below!</Typography>
@@ -131,8 +131,8 @@ export default function Registration() {
                     </Box>
                         </Grid>
                     </Grid>
-                    <Grid container xs={6} display="flex" justifyContent="center" alignItems="center" style={{backgroundColor:"#e3f2fd",borderRadius:"30px"}}>
-                    <Grid item style={{borderRadius:"30px",height:"calc(100vh - 220px)"}}>
+                    <Grid container xs={5} display="flex" justifyContent="center" alignItems="center" style={{backgroundColor:"#e3f2fd",borderRadius:"30px"}}>
+                    <Grid item style={{height:"calc(100vh - 220px)"}}>
                     <Lottie options={interaction}></Lottie>
                     </Grid>
                     </Grid>
