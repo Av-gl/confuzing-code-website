@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore"
-import { getAuth} from 'firebase/auth'
+import { getAuth,GoogleAuthProvider,signInWithPopup,GithubAuthProvider,OAuthProvider} from 'firebase/auth'
 import { getPerformance } from "firebase/performance";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -25,5 +25,11 @@ const app = initializeApp(firebaseConfig);
 
 const analytics = getAnalytics(app);
 const perf = getPerformance(app);
-export const db = getFirestore(app);
+export const db = getFirestore(app); 
 export const auth = getAuth()
+
+export const provider = new GoogleAuthProvider()
+export const provider2 = new GithubAuthProvider()
+export const provider3 = new OAuthProvider('microsoft.com');
+
+

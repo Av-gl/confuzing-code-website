@@ -1,19 +1,17 @@
-import { Divider, ListItemIcon, Tooltip, Avatar, ListitemButton, AppBar, Toolbar, Typography, makeStyle, makeStyles, Button, IconButton, Drawer, MenuItem, ListItem, MenuList, Menu} from "@material-ui/core";
+import { Divider, ListItemIcon, Tooltip, Avatar, AppBar, Toolbar, makeStyles, Button, IconButton, Drawer, MenuItem, MenuList, Menu} from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 import React, {useState,useEffect} from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import NotesIcon from '@mui/icons-material/Notes';
-import GamesIcon from '@mui/icons-material/Games';
-import BookIcon from '@mui/icons-material/Book';
+import { collection, query, where, getDocs} from "firebase/firestore";
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import { signOut } from "firebase/auth";
-import {auth} from './firebase-config'
+import { signOut} from "firebase/auth";
+import {auth,db} from './firebase-config'
 
 const headersData = [
     {
@@ -102,7 +100,10 @@ const useStyles = makeStyles(()=> ({
 export default function Header( {children} ) {
     const history = useHistory()
 
+    const [user,setUser] = useState({});
+    const [letter, setLetter] = useState(null)
     const [anchorEl,setAnchorEl] = useState(null);
+    const usersRef = collection(db, "Users");
     const open = Boolean(anchorEl);
     const avatarClick=(event)=>{
         setAnchorEl(event.currentTarget);
@@ -155,21 +156,31 @@ export default function Header( {children} ) {
         )
     }
 
-    const handleLogout=()=>{
-        signOut(auth)
+    const handleLogout = async () => {
+        await signOut(auth)
         .then(() => {
+            localStorage.setItem("userID",null)
             alert("You have been logged out!")
+            window.location.reload(true)
         })
         .catch((err) => {
             alert("err.message")
         })
 
     }
+    const q = query(usersRef, where("userID", "==", localStorage.getItem("userID")));
+
+    (async function() {
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        setLetter(doc.data().name[0]);
+        });
+      })();
 
     const avatarDisplay=()=>{
         return (
-
-            <Avatar></Avatar>
+            <Avatar>{letter}</Avatar>
         )
     }
 

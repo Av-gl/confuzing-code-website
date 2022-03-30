@@ -1,5 +1,5 @@
 import Header from './Header';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route,Redirect } from 'react-router-dom'
 import Home from './Home'
 import AboutUs from './Aboutus'
 import Settings from './Settings'
@@ -11,6 +11,8 @@ import Notes from './Notes'
 import Loops from './Loops';
 import PastPapers from './Pastpapers';
 import Lectures from './Lectures';
+import Error from "./Error"
+import Details from "./Details"
 
 function App() {
   return (
@@ -49,6 +51,12 @@ function App() {
             </Route>
             <Route exact path="/resources/lectures">
               <Lectures />
+            </Route>
+            <Route exact path="/login-register/details">
+              <Details />
+            </Route>
+            <Route>
+            <Error />
             </Route>
         </Switch>
       </Header>
