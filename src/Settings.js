@@ -14,14 +14,12 @@ export default function Settings() {
     const [issue,setIssue] = useState(null)
     const [content,setContent] = useState(null)
     const [id,setID] = useState('')
-    const [online,setOnline] = useState(false);
+    const [online,setOnline] = useState(true);
 
     useEffect(() => {
-        if (localStorage.getItem("userID") !== "null") {
-            setOnline(true)
-        } else if (localStorage.getItem("userID") === "null") {
+        if (localStorage.getItem("userID") === "null" || localStorage.getItem("userID") == null) {
             setOnline(false)
-        }
+        } 
     }, []);
 
     const q = query(usersRef, where("userID", "==", localStorage.getItem("userID")));
@@ -131,7 +129,6 @@ export default function Settings() {
 
     return (
         <div>
-            {console.log(online)}
             {online ? loggedIn() : loggedOut()}
         </div> 
     )

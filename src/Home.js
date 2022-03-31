@@ -90,6 +90,7 @@ export default function Home() {
 
     const [state, setState] = useState({mobileView: false})
     const { mobileView} = state;
+
     useEffect(() => {
         const setResponsiveness1 = () => {
           return window.innerWidth < 870

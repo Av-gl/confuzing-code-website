@@ -249,16 +249,13 @@ export default function Registration() {
                                 <TextField required label="Password" variant='outlined' color='primary' onChange={(e) => setPassword(e.target.value)}/>
                             </Grid>
                         </Grid>
-                        {/*<Box textAlign='center'>
-                            <Button>Forgot Password!</Button>
-                        </Box>*/}
                         <Box textAlign='center' sx={{margin:"10px"}}>
                             <Button variant="contained" type="submit" fullWidth>Login</Button>
                         </Box>
                         <Grid container direction="column" alignItems="center" justifyContent="center" sx={{marginTop:"20px"}}>
                         <Typography align="center" variant="h6">You can also register or login using the options below!</Typography>
                     </Grid>
-                    <Box sx={{marginTop:"20px"}}>
+                    <Box sx={{margin:"10px"}}>
                     <Button onClick={()=>{forgotPassword()}} type="submit" variant="contained" fullWidth >Forgot Password!</Button>
                     </Box>
                     <Box component="form" sx={{margin:"20px"}} >

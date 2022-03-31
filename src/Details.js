@@ -23,7 +23,7 @@ export default function Details() {
             alert("As stated in the rules and regulations, students only in grade 6 and above are eligible to register. We are really sorry and we hope to see you in the coming years. Thank you.")
         } else if (gradeError===false) {
             createUser()
-            alert("You have successfully register. We will soon send out a confirmation email and will add you to our WhatsApp group to update you with our upcoming events. Thank you.")
+            alert("You have successfully register. We will soon add you to our WhatsApp group to update you with our upcoming events. Thank you.")
             history.push("/")
         }
     }
